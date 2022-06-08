@@ -34,7 +34,7 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "tsprj",
+    "preferredEditor": "pyprj",
     "languageRestriction": "python-only",
     "yotta": {
         "config": {

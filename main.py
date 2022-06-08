@@ -55,18 +55,22 @@ def line_following():
     if pins.digital_read_pin(pin_R) == 0 and pins.digital_read_pin(pin_L) == 0:
             PCAmotor.motor_run(PCAmotor.Motors.M1, 80)
             PCAmotor.motor_run(PCAmotor.Motors.M4, 100)
+        
+            
     elif pins.digital_read_pin(pin_R) == 1 and pins.digital_read_pin(pin_L) == 1:
             PCAmotor.motor_run(PCAmotor.Motors.M1, 80)
             PCAmotor.motor_run(PCAmotor.Motors.M4, 100)
-    elif pins.digital_read_pin(pin_L) == 1:
             
+
+    elif pins.digital_read_pin(pin_L) == 1:  
             PCAmotor.motor_run(PCAmotor.Motors.M1, 60)
             PCAmotor.motor_run(PCAmotor.Motors.M4, -60)
-    elif pins.digital_read_pin(pin_R) == 1:
             
+
+    elif pins.digital_read_pin(pin_R) == 1:
             PCAmotor.motor_run(PCAmotor.Motors.M1, -60)
             PCAmotor.motor_run(PCAmotor.Motors.M4, 60)
-    basic.pause(50)
+            
 
 #def switch():
     #if uartData == "1":
