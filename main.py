@@ -21,7 +21,7 @@ bluetooth.on_bluetooth_connected(on_bluetooth_connected)
 
 def on_bluetooth_disconnected():
     global connected
-    basic.show_icon(IconNames.SAD)
+    
     connected = 0
     while connected == 0:
         line_following() #Spouští mód bez zasahování do jízdy
@@ -51,26 +51,26 @@ def Manual():
     
 #Sledování čáry
 def line_following():
-
+    
     if pins.digital_read_pin(pin_R) == 0 and pins.digital_read_pin(pin_L) == 0:
-            PCAmotor.motor_run(PCAmotor.Motors.M1, 80)
-            PCAmotor.motor_run(PCAmotor.Motors.M4, 100)
-        
+            PCAmotor.motor_run(PCAmotor.Motors.M1, 120)
+            PCAmotor.motor_run(PCAmotor.Motors.M4, 150)
+
             
     elif pins.digital_read_pin(pin_R) == 1 and pins.digital_read_pin(pin_L) == 1:
-            PCAmotor.motor_run(PCAmotor.Motors.M1, 80)
-            PCAmotor.motor_run(PCAmotor.Motors.M4, 100)
+            PCAmotor.motor_run(PCAmotor.Motors.M1, 120)
+            PCAmotor.motor_run(PCAmotor.Motors.M4, 150)
             
 
-    elif pins.digital_read_pin(pin_L) == 1:  
-            PCAmotor.motor_run(PCAmotor.Motors.M1, 60)
+    elif pins.digital_read_pin(pin_L) == 0:  
+            PCAmotor.motor_run(PCAmotor.Motors.M1, 80)
             PCAmotor.motor_run(PCAmotor.Motors.M4, -60)
             
-
-    elif pins.digital_read_pin(pin_R) == 1:
+    elif pins.digital_read_pin(pin_R) == 0:
             PCAmotor.motor_run(PCAmotor.Motors.M1, -60)
-            PCAmotor.motor_run(PCAmotor.Motors.M4, 60)
-            
+            PCAmotor.motor_run(PCAmotor.Motors.M4, 80)
+         
+
 
 #def switch():
     #if uartData == "1":
